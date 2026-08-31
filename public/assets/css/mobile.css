@@ -1,0 +1,237 @@
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    html,
+    body,
+    body.h-screen {
+        height: auto !important;
+        min-height: 100%;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    #profile-pages {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+        scroll-snap-type: none !important;
+        touch-action: pan-y;
+    }
+
+    .profile-page {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 100svh;
+        max-height: none !important;
+        overflow: visible !important;
+        scroll-margin-top: 6.5rem;
+        /* Desktop isolates horizontal panels. Portrait has one continuous page,
+           so the fixed navigation must be allowed above every later section. */
+        isolation: auto;
+    }
+
+    /* Desktop sections deliberately have their own vertical scroll areas.
+       On portrait those nested scrollers trap a finger at the gallery boundary,
+       so every section must join the one document-level scroll instead. */
+    .profile-page > [data-vertical-page] {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        overscroll-behavior: auto;
+    }
+
+    .profile-reference-layout {
+        height: auto !important;
+        min-height: 100svh;
+        padding: 1.25rem 1rem 2.5rem !important;
+    }
+
+    .profile-reference-logo {
+        width: min(21rem, 82vw);
+        max-height: 7.25rem;
+    }
+
+    .profile-companies {
+        margin-top: 1rem;
+        gap: .55rem .75rem;
+        font-size: clamp(.72rem, 2.2vw, .92rem);
+    }
+
+    /* One shared nav: it begins at the end of the home view and becomes fixed
+       only after it reaches the top. The main SYL logo remains the sole logo. */
+    .profile-global-nav {
+        position: fixed;
+        top: 0;
+        bottom: auto;
+        z-index: 9999;
+        border-bottom: 1px solid var(--profile-line);
+        background: rgba(255, 255, 255, .96);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+
+    .profile-global-nav.is-home {
+        position: absolute;
+        top: calc(100svh - 4.9rem);
+        bottom: auto;
+        margin: 0;
+        width: 100%;
+        border-bottom: 0;
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .profile-global-nav.is-home.is-mobile-stuck {
+        position: fixed;
+        top: 0;
+        border-bottom: 1px solid var(--profile-line);
+        background: rgba(255, 255, 255, .96);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+
+    html.dark .profile-global-nav,
+    html.dark .profile-global-nav.is-home,
+    html.dark .profile-global-nav.is-home.is-mobile-stuck {
+        background: rgba(15, 36, 53, .96);
+    }
+
+    html.dark .profile-global-nav.is-home:not(.is-mobile-stuck) {
+        background: transparent;
+    }
+
+    .profile-global-nav-layout {
+        width: 100%;
+        gap: .15rem;
+        padding: .35rem .4rem .4rem;
+    }
+
+    .profile-global-nav-logo,
+    .profile-global-nav.is-home .profile-global-nav-logo {
+        display: none;
+    }
+
+    /* The compact mark appears only after the navigation is fixed at the top. */
+    .profile-global-nav.is-home.is-mobile-stuck .profile-global-nav-logo,
+    .profile-global-nav:not(.is-home) .profile-global-nav-logo {
+        display: block;
+        width: 7.1rem;
+        height: 2rem;
+    }
+
+    .profile-global-nav-links {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr)) 2.8rem;
+        width: 100%;
+        gap: .12rem;
+        overflow: visible;
+        padding: 0;
+    }
+
+    .profile-global-nav-links .profile-reference-nav-link {
+        flex-direction: column;
+        min-width: 0;
+        width: 100%;
+        gap: .18rem;
+        padding: .38rem .08rem;
+        font-size: clamp(.49rem, 1.65vw, .63rem);
+        white-space: nowrap;
+    }
+
+    .profile-global-nav-links .profile-reference-nav-link i {
+        font-size: .72rem;
+    }
+
+    .profile-global-nav-links .profile-theme-button {
+        width: 2.8rem;
+        margin: 0;
+    }
+
+    .profile-reference-tagline {
+        padding: 1.4rem 0 .9rem !important;
+        font-size: clamp(1.35rem, 5.5vw, 1.85rem);
+        letter-spacing: .1em;
+    }
+
+    .profile-reference-copy {
+        margin-top: 0 !important;
+        font-size: clamp(1rem, 3.8vw, 1.18rem);
+        line-height: 1.45;
+    }
+
+    .p-whychooseus {
+        padding: 0 !important;
+        margin-top: 1.75rem;
+    }
+
+    .p-whychooseus-trigger {
+        gap: .55rem;
+        font-size: 1.25rem;
+    }
+
+    .company-profile-whychooseus-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .company-profile-whychooseus-card {
+        min-height: 10.8rem;
+        padding: 1.2rem 1rem;
+        border-radius: 1rem;
+    }
+
+    .company-profile-whychooseus-icon {
+        width: 2.8rem;
+        height: 2.8rem;
+        font-size: 1.1rem;
+    }
+
+    .company-profile-whychooseus-card h3 {
+        font-size: 1rem;
+    }
+
+    .company-profile-whychooseus-card p {
+        max-width: 24rem;
+        font-size: .98rem;
+        line-height: 1.45;
+    }
+
+    .profile-page:not(#page-company-profile) .profile-about-shell {
+        padding-top: 7.25rem;
+    }
+
+    /* Mobile galleries use the full available width and are swipe controlled. */
+    .profile-gallery-frame {
+        display: block;
+        width: 100%;
+        height: clamp(19rem, 95vw, 30rem);
+    }
+
+    .profile-gallery-nav,
+    .profile-team-gallery-nav {
+        display: none;
+    }
+
+    .profile-gallery-card,
+    .profile-gallery-card.is-active {
+        width: 100%;
+        min-width: 0;
+        left: 50%;
+    }
+
+    .profile-gallery-card.is-prev,
+    .profile-gallery-card.is-next {
+        display: none;
+    }
+
+    .profile-team-gallery-frame {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-monitor { display: none !important; }
+}
+
+

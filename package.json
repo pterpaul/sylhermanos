@@ -1,0 +1,13 @@
+{
+  "name": "sylhermanos-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SYL Hermanos company site, converted from PHP to a Node static-site build for Vercel.",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "npx serve dist"
+  },
+  "optionalDependencies": {
+    "mysql2": "^3.11.0"
+  }
+}
