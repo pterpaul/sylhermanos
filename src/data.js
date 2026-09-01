@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PUBLIC_DIR = path.join(__dirname, '..', 'public');
+const MEDIA_ROOT = 'assets/media';
 
 let mysqlModule = null;
 try {
@@ -43,7 +44,7 @@ function listImages(basePath) {
 }
 
 function loadAboutUsGalleryFromFolder() {
-  const basePath = path.join(PUBLIC_DIR, 'assets/library/images/uploads_aboutus');
+  const basePath = path.join(PUBLIC_DIR, 'assets/media/uploads_aboutus');
   const files = listImages(basePath);
   if (!files.length) return [];
 
@@ -61,7 +62,7 @@ function loadAboutUsGalleryFromFolder() {
   return files.map((fileName) => {
     const imageKey = fileName.replace(/\.[^.]+$/, '');
     return {
-      image: 'assets/library/images/uploads_aboutus/' + fileName,
+      image: MEDIA_ROOT + '/uploads_aboutus/' + fileName,
       title: imageKey,
       alt: 'Syl Hermanos gallery image',
       tagline: taglines[imageKey] || 'A closer look at the people and work behind SYL Hermanos.',
@@ -101,7 +102,7 @@ async function loadAboutUsGallery() {
  * Why Choose US - Team Gallery (137) - fallback table
  */
 function loadTeamGalleryFallback() {
-  const basePath = 'assets/library/images/pp/sylpp-layouts/';
+  const basePath = MEDIA_ROOT + '/pp/sylpp-layouts/';
   return [
     { image: basePath + 'syl-distribution-operations-a.jpg', department: 'Distribution Operations', tagline: 'Coordinating every movement with care, accuracy, and purpose.', alt: 'SYL distribution operations team' },
     { image: basePath + 'syl-auditors-a.jpeg', department: 'Audit', tagline: 'Providing independent assurance and insight to strengthen operations.', alt: 'SYL audit team' },
@@ -149,8 +150,8 @@ async function loadTeamGallery() {
 }
 
 function loadPrincipalLogos() {
-  const basePath = path.join(PUBLIC_DIR, 'assets/library/images/principals');
-  const webPath = 'assets/library/images/principals/';
+  const basePath = path.join(PUBLIC_DIR, 'assets/media/principals');
+  const webPath = MEDIA_ROOT + '/principals/';
   const files = listImages(basePath);
   if (!files.length) return [];
 
@@ -195,8 +196,8 @@ function loadPrincipalLogos() {
 }
 
 function loadAwardItems() {
-  const basePath = path.join(PUBLIC_DIR, 'assets/library/images/awards-reviews/');
-  const webPath = 'assets/library/images/awards-reviews/';
+  const basePath = path.join(PUBLIC_DIR, 'assets/media/awards-reviews/');
+  const webPath = MEDIA_ROOT + '/awards-reviews/';
   const awards = [
     { slug: 'eagle-distributor-awardee', title: 'Eagle Distributor Awardee', icon: 'fa-trophy' },
     { slug: 'top-performer-distributor', title: 'Top Performer Distributor', icon: 'fa-medal' },

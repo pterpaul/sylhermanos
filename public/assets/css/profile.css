@@ -1,3 +1,4 @@
+/*! syl-ppaul - profile.css v1.0.5 | MIT License | https://sylhermanos.com */
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
 
 :root {
@@ -761,7 +762,7 @@ html.dark .profile-global-nav.is-home {
     aspect-ratio: 4 / 3;
     content: '';
     border-radius: 1rem;
-    background: linear-gradient(135deg, rgba(7, 46, 74, 0.12), rgba(8, 125, 183, 0.05)), url('../library/images/uploads_aboutus/syl_aboutus-company-details-bg.jpg') center / cover;
+    background: linear-gradient(135deg, rgba(7, 46, 74, 0.12), rgba(8, 125, 183, 0.05)), url('../media/uploads_aboutus/syl_aboutus-company-details-bg.jpg') center / cover;
     box-shadow: 0 1.25rem 2.8rem rgba(16, 43, 67, 0.14);
 }
 
@@ -824,7 +825,7 @@ html.dark .profile-global-nav.is-home {
 
 .profile-company-philosophy {
     color: #fff;
-    background: linear-gradient(135deg, rgba(5, 51, 81, 0.97), rgba(8, 125, 183, 0.86)), url('../library/images/uploads_aboutus/syl_aboutus-company-details-bg.jpg') center / cover;
+    background: linear-gradient(135deg, rgba(5, 51, 81, 0.97), rgba(8, 125, 183, 0.86)), url('../media/uploads_aboutus/syl_aboutus-company-details-bg.jpg') center / cover;
     box-shadow: 0 1.25rem 2.8rem rgba(16, 43, 67, 0.16);
 }
 
@@ -2878,3 +2879,5 @@ html.dark .profile-policy-back { background: #102b43; color: #a9dcf4; }
 #page-content-footer .profile-contact-section { padding-bottom: 1.5rem; }
 
 @media (max-width: 640px) { .profile-contact-section { padding-top: 1.6rem; } .profile-site-footer { align-items: start; flex-direction: column; } .profile-policy-dialog-inner { padding: 1.25rem; } .profile-policy-back span { display: none; } }
+
+/* spp - end 2882 v1.0.5 */

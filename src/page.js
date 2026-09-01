@@ -1,3 +1,4 @@
+/*! ppaul/syl - profile v1.0.2 | MIT License | https://sylhermanos.com */
 const { esc, nl2br, pad2 } = require('./render-helpers');
 
 function renderHead() {
@@ -7,6 +8,7 @@ function renderHead() {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="assets/css/output.css">
 	<link rel="stylesheet" href="assets/css/profile.css">
+	<link rel="stylesheet" href="assets/css/syl-ps.css">
 	<link rel="stylesheet" href="assets/Font-Awesome-7.x/css/all.min.css">
 	<title>SYL Hermanos</title>
   <script type="text/javascript">
@@ -147,7 +149,7 @@ function renderPrincipalDirectory(items) {
       (principal) => `
 								<article class="profile-principal-directory-card">
 									<div class="profile-principal-directory-logo">
-										<img src="${esc('assets/library/images/principals/' + principal.logo)}" alt="${esc(principal.name)} logo">
+										<img src="${esc('assets/media/principals/' + principal.logo)}" alt="${esc(principal.name)} logo">
 									</div>
 									<div class="profile-principal-directory-content">
 										<h3>${esc(principal.name)}</h3>
@@ -201,8 +203,8 @@ function renderPage(data) {
 		<section id="page-company-profile" class="profile-page h-screen min-w-full snap-start" aria-label="Company Profile">
 			<div class="profile-reference-layout mx-auto flex h-full max-w-[80rem] flex-col px-6 pb-24 pt-8 sm:px-10">
 				<div class="profile-theme-logo profile-reference-logo mx-auto w-full max-w-[38rem]" role="img" aria-label="SYL Hermanos Group of Companies logo">
-					<img class="profile-theme-logo-light" src="assets/library/images/uploads/sylhermanos-gc-a.png" alt="">
-					<img class="profile-theme-logo-dark" src="assets/library/images/uploads/sylhermanos-gc-b.png" alt="">
+					<img class="profile-theme-logo-light" src="assets/media/uploads/sylhermanos-gc-a.png" alt="">
+					<img class="profile-theme-logo-dark" src="assets/media/uploads/sylhermanos-gc-b.png" alt="">
 				</div>
 				<div class="profile-companies mt-5 grid grid-cols-2 gap-x-5 gap-y-3 text-center sm:grid-cols-4">
 					<span>SYL Hermanos Trade Center, INC.</span>
@@ -212,7 +214,7 @@ function renderPage(data) {
 				</div>
 				<header id="profile-global-nav" class="profile-global-nav is-home">
 					<nav class="profile-global-nav-layout" aria-label="Company sections">
-						<div class="profile-theme-logo profile-global-nav-logo" role="img" aria-label="SYL Hermanos"><img class="profile-theme-logo-light" src="assets/library/images/uploads/sylhermanos-gc-a.png" alt=""><img class="profile-theme-logo-dark" src="assets/library/images/uploads/sylhermanos-gc-b.png" alt=""></div>
+						<div class="profile-theme-logo profile-global-nav-logo" role="img" aria-label="SYL Hermanos"><img class="profile-theme-logo-light" src="assets/media/uploads/sylhermanos-gc-a.png" alt=""><img class="profile-theme-logo-dark" src="assets/media/uploads/sylhermanos-gc-b.png" alt=""></div>
 						<div class="profile-global-nav-links">
 							<a class="profile-reference-nav-link is-active" href="#page-company-profile" data-page-link="0"><i class="fa-solid fa-house" aria-hidden="true"></i><span>HOME</span></a>
 							<a class="profile-reference-nav-link" href="#page-gallery" data-page-link="1"><i class="fa-solid fa-circle-info" aria-hidden="true"></i><span>ABOUT US</span></a>
@@ -349,7 +351,7 @@ function renderPage(data) {
 								<h3>Respect the past.<br>Build the future.</h3>
 								<p>SYL upholds and strongly believes in tradition—respect for elders, paying homage to the past, and honoring family. Adhering to these principles, even as the company is steered into the 21st century while facing more challenges, has maintained its business ethics, integrity, and honor.</p>
 								<figure class="profile-philosophy-image">
-									<img src="assets/library/images/pp/sylpp-layouts/syl-our-philosophy-a.png" alt="Illustration representing SYL's philosophy of elder experience, ethics, family values, and future progress">
+									<img src="assets/media/pp/sylpp-layouts/syl-our-philosophy-a.png" alt="Illustration representing SYL's philosophy of elder experience, ethics, family values, and future progress">
 								</figure>
 								<div class="profile-philosophy-principles"><article><span>01</span><div><strong>Respect for elders</strong><p>Respect is a positive feeling of esteem. Knowledge and experience from our elders show that they are the master and we are the student. Their wisdom builds lives where learning from the past brings progress into the future.</p></div></article><article><span>02</span><div><strong>Homage to the past</strong><p>The past shows where we came from, who we are, and how we became what we are. Our families, communities, and societies are our heritage; we uphold it so we will always remember.</p></div></article><article><span>03</span><div><strong>Honoring family</strong><p>Family is the basic unit in every society. Values begin with parents and flow to their children. We love, serve, teach, and learn from one another as we grow into the world.</p></div></article></div>
 							</article>

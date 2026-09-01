@@ -1,5 +1,17 @@
 # SYL Hermanos — Node conversion
 
+## Author & Ownership
+
+This website was developed by **PPaul Dequito**, a member of the **SYL Hermanos IT Department**.
+
+## Terms & Conditions Policy
+
+- **Philippines Code Copyrighted**, effective as of **August 2026**.
+- All information contained in this website is stated as true and legitimate, with authorized permission from **SYL Hermanos**.
+- This project was created by **PPaul Dequito** in support of the SYL Hermanos company profile and digital presence.
+- All content, materials, and digital assets associated with this website are used in compliance with the rights and authorization granted by **SYL Hermanos**.
+- Unauthorized reproduction, distribution, modification, or commercial use of this website content is prohibited without prior consent.
+
 This is the original `sylhermanos` PHP site (single-page company profile:
 home, about, principals, careers, contact) rebuilt as a **Node.js static
 build** so it can be deployed on Vercel with no PHP or server runtime.

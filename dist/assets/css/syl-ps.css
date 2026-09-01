@@ -1,0 +1,56 @@
+/* User Selection Protection - SYL - PPAUL */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Allow selection on inputs and textareas for usability */
+input, textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Prevent printing */
+@media print {
+  body {
+    display: none !important;
+  }
+  * {
+    display: none !important;
+  }
+}
+
+/* Additional protections for images */
+img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* Screenshot capture deterrent (best-effort only) */
+html.screenshot-blocked::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: #000;
+  opacity: 1;
+  z-index: 999999999;
+  pointer-events: none;
+}
+
+html.screenshot-blocked * {
+  color: transparent !important;
+  background: #000 !important;
+  background-image: none !important;
+  border-color: #000 !important;
+  box-shadow: none !important;
+}
