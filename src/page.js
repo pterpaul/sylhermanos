@@ -11,6 +11,7 @@ function renderHead() {
 	<link rel="stylesheet" href="assets/css/syl-ps.css">
 	<link rel="stylesheet" href="assets/Font-Awesome-7.x/css/all.min.css">
 	<title>SYL Hermanos</title>
+	<link rel="icon" type="image/x-icon" href="assets/media/sylhermanos-plain.png"/>
   <script type="text/javascript">
     (function(c, l, a, r, i, t, y) {
       c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments); };
@@ -198,7 +199,7 @@ function renderPage(data) {
 
   return `${renderHead()}
 
-<body class="h-screen overflow-hidden">
+<body class="h-screen overflow-hidden" oncontextmenu="return false;">
 	<main id="profile-pages" class="flex h-screen w-screen snap-x snap-mandatory overflow-x-auto overflow-y-hidden scroll-smooth overscroll-x-contain">
 		<section id="page-company-profile" class="profile-page h-screen min-w-full snap-start" aria-label="Company Profile">
 			<div class="profile-reference-layout mx-auto flex h-full max-w-[80rem] flex-col px-6 pb-24 pt-8 sm:px-10">

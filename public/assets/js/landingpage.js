@@ -143,14 +143,17 @@
 			startGalleryAutoAdvance();
 		});
 		galleryCarousel.addEventListener('pointerdown', (event) => {
+			if (!event.isPrimary) return;
 			isPointerDragging = true;
 			pointerStartX = event.clientX;
+			galleryCarousel.setPointerCapture?.(event.pointerId);
 			pauseGalleryAutoAdvance();
 		});
 		galleryCarousel.addEventListener('pointerup', (event) => {
 			if (!isPointerDragging) return;
 			const delta = event.clientX - pointerStartX;
 			isPointerDragging = false;
+			galleryCarousel.releasePointerCapture?.(event.pointerId);
 			if (Math.abs(delta) >= 36) setActiveGalleryCard(activeGalleryIndex + (delta < 0 ? 1 : -1));
 			startGalleryAutoAdvance();
 		});
@@ -218,14 +221,17 @@
 			startTeamAutoAdvance();
 		});
 		teamGallery.addEventListener('pointerdown', (event) => {
+			if (!event.isPrimary) return;
 			isTeamDragging = true;
 			teamPointerStartX = event.clientX;
+			teamGallery.setPointerCapture?.(event.pointerId);
 			pauseTeamAutoAdvance();
 		});
 		teamGallery.addEventListener('pointerup', (event) => {
 			if (!isTeamDragging) return;
 			const delta = event.clientX - teamPointerStartX;
 			isTeamDragging = false;
+			teamGallery.releasePointerCapture?.(event.pointerId);
 			if (Math.abs(delta) >= 36) setActiveTeamSlide(activeTeamIndex + (delta < 0 ? 1 : -1));
 			startTeamAutoAdvance();
 		});
@@ -292,8 +298,9 @@
 
 		const sections = [...document.querySelectorAll('.profile-page')];
 		const scrollPosition = Math.max(window.scrollY, document.documentElement.scrollTop, document.body.scrollTop, profilePages.scrollTop);
-		// Keep the current item active until the next page reaches the sticky header.
-		const viewportMarker = scrollPosition + Math.max(96, profileGlobalNav?.offsetHeight || 0);
+		// Switch as soon as the next page enters the viewport, before its content
+		// can meet the home page's bottom navigation.
+		const viewportMarker = scrollPosition + window.innerHeight - 1;
 		let activeIndex = 0;
 		sections.forEach((section, index) => {
 			if (viewportMarker >= section.offsetTop) activeIndex = index;

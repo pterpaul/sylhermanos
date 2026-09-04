@@ -46,7 +46,7 @@
     .profile-reference-layout {
         height: auto !important;
         min-height: 100svh;
-        padding: 1.25rem 1rem 2.5rem !important;
+        padding: 1.25rem 1rem calc(5.75rem + env(safe-area-inset-bottom)) !important;
     }
 
     .profile-reference-logo {
@@ -74,9 +74,9 @@
     }
 
     .profile-global-nav.is-home {
-        position: absolute;
-        top: calc(100svh - 4.9rem);
-        bottom: auto;
+        position: fixed;
+        top: auto;
+        bottom: 0;
         margin: 0;
         width: 100%;
         border-bottom: 0;
@@ -88,6 +88,7 @@
     .profile-global-nav.is-home.is-mobile-stuck {
         position: fixed;
         top: 0;
+        bottom: auto;
         border-bottom: 1px solid var(--profile-line);
         background: rgba(255, 255, 255, .96);
         backdrop-filter: blur(16px);
@@ -115,6 +116,20 @@
         display: none;
     }
 
+    .profile-global-nav-logo {
+        position: relative;
+        aspect-ratio: auto;
+    }
+
+    .profile-global-nav-logo img {
+        position: absolute;
+        inset: 0;
+        grid-area: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
     /* The compact mark appears only after the navigation is fixed at the top. */
     .profile-global-nav.is-home.is-mobile-stuck .profile-global-nav-logo,
     .profile-global-nav:not(.is-home) .profile-global-nav-logo {
@@ -138,12 +153,12 @@
         width: 100%;
         gap: .18rem;
         padding: .38rem .08rem;
-        font-size: clamp(.49rem, 1.65vw, .63rem);
+        font-size: clamp(.56rem, 1.8vw, .68rem);
         white-space: nowrap;
     }
 
     .profile-global-nav-links .profile-reference-nav-link i {
-        font-size: .72rem;
+        font-size: .78rem;
     }
 
     .profile-global-nav-links .profile-theme-button {
@@ -201,14 +216,164 @@
     }
 
     .profile-page:not(#page-company-profile) .profile-about-shell {
-        padding-top: 7.25rem;
+        padding-top: 0;
+    }
+
+    .profile-page:not(#page-company-profile) .profile-about-section {
+        padding-top: 1.5rem;
+    }
+
+    .profile-page:not(#page-company-profile) .profile-gallery-shell {
+        padding-top: 0;
+    }
+
+    .profile-company-details .profile-glass-card.profile-company-purpose-row {
+        grid-template-columns: 2rem auto;
+        align-items: start;
+        justify-content: center;
+        gap: .55rem .7rem;
+        padding: 1.1rem 1rem;
+    }
+
+    .profile-company-details .profile-glass-card.profile-company-purpose-row::before {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+    }
+
+    .profile-company-details .profile-company-purpose-row i {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: end;
+        align-self: center;
+        margin-top: 0;
+    }
+
+    .profile-company-details .profile-company-purpose-row h3 {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+    }
+
+    .profile-company-details .profile-company-purpose-row p {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .profile-core-values-grid {
+        gap: .55rem;
+    }
+
+    .profile-core-values-grid article {
+        grid-template-columns: 1.5rem minmax(0, 1fr);
+        align-items: start;
+        gap: .45rem .6rem;
+        min-height: 0;
+        padding: .75rem .7rem;
+    }
+
+    .profile-core-values-grid article i {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: .15rem;
+    }
+
+    .profile-core-values-grid article strong {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+    }
+
+    .profile-core-values-grid article p {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .profile-principal-directory-logo {
+        width: 100%;
+        height: 8.5rem;
+        padding: .85rem;
+        place-items: center;
+    }
+
+    .profile-principal-directory-logo img {
+        width: auto !important;
+        height: auto !important;
+        max-width: 100% !important;
+        max-height: calc(8.5rem - 1.7rem - 2px) !important;
+        object-fit: contain !important;
+        object-position: center;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .profile-why-section {
+        padding-top: 2rem;
+    }
+
+    .profile-why-grid {
+        grid-template-columns: 1fr;
+        gap: .85rem;
+        margin-top: 1.5rem;
+    }
+
+    .profile-why-grid article {
+        min-height: 0;
+        padding: 1.25rem 1rem;
+    }
+
+    .profile-why-grid h3 {
+        font-size: 1.25rem;
+    }
+
+    .profile-why-grid p {
+        font-size: .92rem;
+        line-height: 1.5;
+    }
+
+    .profile-team-showcase {
+        grid-template-columns: 1fr;
+        row-gap: 1.25rem;
+        margin-top: 2.5rem;
+        padding-top: 1.75rem;
+    }
+
+    .profile-team-showcase-copy > p:not(.profile-about-kicker) {
+        max-width: none;
+    }
+
+    .profile-team-departments {
+        grid-template-columns: 1fr 1fr;
+        gap: .45rem .75rem;
+    }
+
+    .profile-team-gallery-frame {
+        grid-template-columns: 1fr;
+        gap: .55rem;
+    }
+
+    .profile-team-gallery {
+        min-height: clamp(18rem, 72vw, 24rem);
+    }
+
+    .profile-team-gallery-pagination {
+        grid-column: 1;
+    }
+
+    .profile-team-context {
+        grid-template-columns: 1fr;
     }
 
     /* Mobile galleries use the full available width and are swipe controlled. */
     .profile-gallery-frame {
         display: block;
         width: 100%;
-        height: clamp(19rem, 95vw, 30rem);
+        height: clamp(17rem, 88vw, 27rem);
+    }
+
+    .profile-gallery-shell {
+        padding-top: 1rem;
     }
 
     .profile-gallery-nav,
