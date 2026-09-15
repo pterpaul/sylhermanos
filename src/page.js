@@ -483,8 +483,8 @@ function renderPage(data) {
 							<li><i class="fa-solid fa-shield-heart" aria-hidden="true"></i><div><strong>Values in practice</strong><p>Value of integrity and transparency are one of the corporate values practiced by management and the employees.</p></div></li>
 						</ol>
 						<div class="profile-locations" aria-labelledby="locations-title">
-							<div><p class="profile-about-kicker">Our locations &amp; warehouses</p><h3 id="locations-title">Across the Visayas.</h3></div>
-							<ol><li>Iloilo City</li><li>Roxas City</li><li>Bacolod City</li><li>Dumaguete City</li></ol>
+							<div><p class="profile-about-kicker">Our locations &amp; warehouses</p><h3 id="locations-title">Across the Western Visayas.</h3></div>
+							<ol><li>Iloilo</li><li>Roxas Capiz</li><li>Bacolod</li><li>Dumaguete</li></ol>
 						</div>
 					 </section>
 
