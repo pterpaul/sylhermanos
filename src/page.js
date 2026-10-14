@@ -227,7 +227,7 @@ function renderPage(data) {
 					</nav>
 				</header>
 				<div class="text-center company-profile-page1-summary" id="company-profile-page1-summary">
-					<h1 class="py-8 profile-reference-tagline">Passionately build brands.</h1>
+					<h1 class="py-8 profile-reference-tagline">Passionately building brands.</h1>	
 					<div class="profile-reference-copy mx-auto max-w-[70rem] text-left">
 						<span class="py-2">
 						SYL Hermanos Trade Center, Inc. (SYL) is a leading consumer goods distribution company preferred by other establishments in the Visayas. 
@@ -367,7 +367,7 @@ function renderPage(data) {
 					<section class="profile-about-section profile-why-section" aria-labelledby="why-title">
 						<p class="profile-about-kicker">&middot; Why choose us</p>
 						<h2 id="why-title">Why choose SYL?</h2>
-						<p class="profile-why-tagline">We love to passionately build brands for the realities of the field.</p>
+						<p class="profile-why-tagline">We love to passionately building brands for the realities of the field.</p>
 						<div class="profile-why-grid">
 							<article>
 								<i class="fa-solid fa-wallet" aria-hidden="true"></i>
