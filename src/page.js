@@ -99,7 +99,7 @@ function renderAwardCards(awardItems) {
       const media = award.image
         ? `<img src="${esc(award.image)}" alt="${esc(award.title)}">`
         : `<i class="fa-solid ${esc(award.icon)}" aria-hidden="true"></i>`;
-      const caption = award.image ? 'Award recognition' : 'Image coming soon';
+      const caption = award.image ? 'Award recognition' : ' ';
       return `
 											<article class="profile-award-card">
 												${media}
